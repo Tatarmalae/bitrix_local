@@ -1,0 +1,17 @@
+/cgi-bin/
+/.idea/
+.DS_Store
+Thumbs.db
+/bitrix/php_interface/dbconn.php
+/bitrix/.settings.php
+/bitrix/cache/
+/bitrix/managed_cache/
+/bitrix/stack_cache/
+/bitrix/backup/
+/upload/resize_cache/
+/upload/tmp/
+/test/
+*.log
+bx_1c_import.php
+/upload/1c_catalog/
+/upload/1c_exchange/
