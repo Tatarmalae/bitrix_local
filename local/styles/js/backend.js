@@ -1,3 +1,18 @@
+$(document).ready(function () {
+    //Сюда помещаем все init-функции
+    initFuncName();
+});
+
+//Событие после Битриксового ajax
+BX.addCustomEvent('onAjaxSuccess', function () {
+
+});
+
+//Функции, которые должны загрузиться при загрузке, называем initFuncName(FuncName - произвольное имя функции)
+function initFuncName() {
+    return true;
+}
+
 //Number_format js
 function number_format(number, decimals, dec_point, thousands_sep) {
     var i, j, kw, kd, km;

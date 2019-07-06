@@ -6,10 +6,9 @@ define("SITE_AJAX_PATH", "/local/ajax");
 
 CModule::AddAutoloadClasses("", array(
     '\Dev\Iblock' => SITE_USER_CLASS_PATH . '/classIblock.php',
-    '\Dev\Settings' => SITE_USER_CLASS_PATH . '/classSettings.php',
     '\Dev\Catalog' => SITE_USER_CLASS_PATH . '/classCatalog.php',
+    '\Dev\Settings' => SITE_USER_CLASS_PATH . '/classSettings.php',
     '\Dev\Utilities' => SITE_USER_CLASS_PATH . '/classUtilities.php',
-    '\Dev\Forms' => SITE_USER_CLASS_PATH . '/classForms.php',
 ));
 
-AddEventHandler("main", "OnBeforeUserUpdate", ['\Dev\Utilities', 'OnBeforeUserAddHandler']);// Пример подключения статического метода класса
+AddEventHandler("main", "OnBeforeUserUpdate", ['\Dev\Utilities', 'OnBeforeUserAddHandler']);// Пример подключения статического метода класса в обработчике

@@ -261,6 +261,19 @@ class Utilities {
     }
 
     /**
+     * Поиск и замена первого вхождения строки
+     * @param $search
+     * @param $replace
+     * @param $text
+     * @return null|string|string[]
+     */
+    public static function str_replace_once($search, $replace, $text) {
+        $pattern = '/' . $search . '/i';
+        $subject = preg_replace($pattern, $replace, $text, 1);
+        return $subject;
+    }
+
+    /**
      * Преобразует формат размера файла
      * @param $bytes
      * @return string
