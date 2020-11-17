@@ -19,10 +19,10 @@ function number_format(number, decimals, dec_point, thousands_sep) {
     if (isNaN(decimals = Math.abs(decimals))) {
         decimals = 2;
     }
-    if (dec_point == undefined) {
+    if (dec_point === undefined) {
         dec_point = ",";
     }
-    if (thousands_sep == undefined) {
+    if (thousands_sep === undefined) {
         thousands_sep = ".";
     }
     i = parseInt(number = (+number || 0).toFixed(decimals)) + "";
@@ -113,6 +113,28 @@ function declension(num, expressions) {
         }
     }
     return result;
+}
+
+//Проверка на историю переходов
+function checkRefer() {
+    if (document.referrer === "") {
+        return false;
+    } else {
+        window.history.back();
+    }
+}
+
+//Сравнение двух массивов
+function getArrayDiff(a, b) {
+    var ret = [],
+        merged = [];
+    merged = a.concat(b);
+    for (var i = 0; i < merged.length; i++) {
+        if (merged.indexOf(merged[i]) === merged.lastIndexOf(merged[i])) {
+            ret.push(merged[i]);
+        }
+    }
+    return ret;
 }
 
 //Замена битриксовых прелоадеров
