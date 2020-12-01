@@ -318,12 +318,13 @@ class Catalog {
     /**
      * Возвращает информацию о элементе со свойствами
      * @param $iblockID
-     * @param $arParams
+     * @param array $arParams
      * @param array $order
+     * @param array $navParams
      * @return array|bool
      * @throws LoaderException
      */
-    public static function getElementList($iblockID, $arParams = [], $order = []) {
+    public static function getElementList($iblockID, $arParams = [], $order = [], $navParams = []) {
         if (!Loader::includeModule('iblock')) return false;
 
         $arResult = [];
@@ -334,7 +335,7 @@ class Catalog {
             "ACTIVE" => "Y",
         ];
         $arFilter = array_merge($arFilter, $arParams);
-        $res = \CIBlockElement::GetList($arOrder, $arFilter, false, [], $arSelect);
+        $res = \CIBlockElement::GetList($arOrder, $arFilter, false, $navParams, $arSelect);
         while ($ob = $res->GetNextElement()) {
 
             $arFields = $ob->GetFields();
